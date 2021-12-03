@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.s194749wheeloffortune.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.s194749wheeloffortune.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_lostgame"
+            app:destination="@id/lostgame" />
+        <action
+            android:id="@+id/action_gameFragment_to_wonGame"
+            app:destination="@id/wonGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/lostgame"
+        android:name="com.example.s194749wheeloffortune.Lostgame"
+        android:label="fragment_lostgame"
+        tools:layout="@layout/fragment_lostgame" >
+        <action
+            android:id="@+id/action_lostgame_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wonGame"
+        android:name="com.example.s194749wheeloffortune.wonGame"
+        android:label="fragment_won_game"
+        tools:layout="@layout/fragment_won_game" >
+        <action
+            android:id="@+id/action_wonGame_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
+</navigation>
