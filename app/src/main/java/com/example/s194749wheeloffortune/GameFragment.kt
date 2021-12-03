@@ -40,6 +40,7 @@ class GameFragment : Fragment() {
         val binding = inflater.inflate(R.layout.fragment_game, container, false)
 
         binding.findViewById<TextView>(R.id.textView).text = "Lives = ${life}"
+        binding.findViewById<TextView>(R.id.textView6).text = "Score: $score"
         return binding.rootView
     }
 
@@ -48,15 +49,14 @@ class GameFragment : Fragment() {
         view.button2.setOnClickListener {
 
             spinthewheel()
-            view.findViewById<TextView>(R.id.textView5).text = wheeloptions
+            view.findViewById<TextView>(R.id.textView5).text = "Wheel hit: $wheeloptions"
             when (wheeloptions) {
                 "extra life" -> {
                     life++
                     view.findViewById<TextView>(R.id.textView).text = "Lives = ${life}"
                 }
                 "bankrupt" -> {
-                    life = 0
-                    endgame(view)
+                    score = 0
                     view.findViewById<TextView>(R.id.textView6).text = "Score:$score"
                 }
                 "missed turn" -> {
