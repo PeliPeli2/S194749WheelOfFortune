@@ -63,11 +63,7 @@ class GameFragment : Fragment() {
                     life--
                     endgame(view)
                     view.findViewById<TextView>(R.id.textView).text = "Lives = ${life}"
-                    // fun for hitting 0 and losing game
-                    /* if(playerlost()){
-                    navigate to end screen
-                    }
-                    */
+
 
 
                 }
@@ -77,20 +73,17 @@ class GameFragment : Fragment() {
                     view.editText.visibility = View.VISIBLE
                     view.button3.setOnClickListener {
                         var playerguess = view.findViewById<EditText>(R.id.editText).text.toString()
-                        Log.d("playerguess",playerguess)
+
                         if (playerguess.length == 1) {
                             var pGuess = playerguess
-                            Log.d("pGuess",pGuess)
+
                             if (chosenword.contains(pGuess, ignoreCase = true && !guessedlet.contains(pGuess))) {
                                 guessedlet += pGuess
-                                Log.d("guessed",guessedlet)
-                                Log.d("chosenword",chosenword)
+
                                 newSecret()
                                 score += wheeloptions.toInt()
                                 view.findViewById<TextView>(R.id.textView6).text = "Score:$score"
 
-                                Log.d("secretword",secretword)
-                                Log.d("newword",newword)
                                 view.findViewById<TextView>(R.id.textView4).text = secretword
                                 wingame(view)
 
